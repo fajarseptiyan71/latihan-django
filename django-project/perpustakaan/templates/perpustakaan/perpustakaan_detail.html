@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mt-4">{{ title }}</h2>
+        <div class="row mt-4">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Data Peminjam</h5>
+                  <ul class="list-group mt-4">
+                    <li class="list-group-item">
+                        Nama : {{ object.nama }}
+                    </li>
+                    <li class="list-group-item">
+                       Kelas : {{ object.kelas }}
+                    </li>
+                    <li class="list-group-item">
+                        Email : {{ object.email }}
+                    </li>
+                    <li class="list-group-item">
+                        No Hp : {{ object.no_hp }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Data Buku</h5>
+                  <ul class="list-group mt-4">
+                    <li class="list-group-item">
+                        Judul : {{ object.judul }}
+                    </li>
+                    <li class="list-group-item">
+                       Penulis : {{ object.penulis }}
+                    </li>
+                    <li class="list-group-item">
+                        Penerbit : {{ object.penerbit }}
+                    </li>
+                    <li class="list-group-item">
+                        Jumlah Buku : {{ object.jumlah_buku }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col text-center mt-4">
+            <a href="{% url 'perpustakaan:index' %}" class="btn btn-success btn-lg">Kembali</a>
+        </div>
+    </div>
+{% endblock %}
+
+
+

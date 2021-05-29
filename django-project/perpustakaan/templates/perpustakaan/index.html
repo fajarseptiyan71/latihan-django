@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+<h2 class="text-center mt-4">Perpustakaaan SMK Hebat</h2>
+<div class="container">
+<a href="{% url 'perpustakaan:register' %}" class="btn btn-success">Register</a>
+<table class="table table-bordered mt-4 text-center">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Kelas</th>
+        <th scope="col">Judul Buku</th>
+        <th scope="col">Penulis</th>
+        <th scope="col">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in datas %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ data.nama }}</td>
+        <td>{{ data.kelas }}</td>
+        <td>{{ data.judul }}</td>
+        <td>{{ data.penulis }}</td>
+        <td>
+          <a href="{% url 'perpustakaan:edit' data.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'perpustakaan:detail' data.slug %}" class="btn btn-warning">Detail</a>
+          <a href="{% url 'perpustakaan:kembalikan' data.id %}" class="btn btn-success">Kembalikan</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

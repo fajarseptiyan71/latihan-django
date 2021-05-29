@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col">
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+                <div class="card-header mb-4">
+                    <h3 class="text-center">{{title}}</h3>
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate method="POST">
+                    {% csrf_token %}
+                    <div class="col-md-6">
+                      <label for="{{ form.nama.id }}" class="form-label">{{ form.nama.label_tag }}</label>
+                      {{ form.nama }}
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="{{ form.kelas.id }}" class="form-label">{{ form.kelas.label_tag }}</label>
+                      {{ form.kelas }}
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="{{ form.email.id }}" class="form-label">{{ form.email.label_tag}}</label>
+                      {{ form.email }}
+                      <div class="invalid-feedback">
+                        Please choose a username.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="{{ form.no_hp.id }}" class="form-label">{{ form.no_hp.label_tag }}</label>
+                      {{ form.no_hp }}
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="  {{ form.judul.id }}" class="form-label">  {{ form.judul.label_tag }}</label>
+                      {{ form.judul }}
+                      <div class="invalid-feedback">
+                        Please select a valid state.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="  {{ form.penulis.id }}" class="form-label">  {{ form.penulis.label_tag }}</label>
+                      {{ form.penulis }}
+                      <div class="invalid-feedback">
+                        Please select a valid state.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="  {{ form.penerbit.id }}" class="form-label">  {{ form.penerbit.label_tag }}</label>
+                        {{ form.penerbit }}
+                        <div class="invalid-feedback">
+                          Please select a valid state.
+                        </div>
+                      </div>
+                    <div class="col-md-6">
+                        <label for="  {{ form.jumlah_buku.id }}" class="form-label">  {{ form.jumlah_buku.label_tag }}</label>
+                        {{ form.jumlah_buku }}
+                        <div class="invalid-feedback">
+                          Please select a valid state.
+                        </div>
+                      </div>
+                    <div class="col-12 mt-4 text-center">
+                      <button class="btn btn-success" type="submit">Submit</button>
+                    </div>
+                  </form>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+</div>
+{% endblock %}

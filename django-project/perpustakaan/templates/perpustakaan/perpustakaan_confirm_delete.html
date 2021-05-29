@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete
+{% endblock  %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="POST" class="mt-4">
+        {% csrf_token %}
+       <div class="row">
+           <div class="col">
+            <div class="alert alert-success text-center" role="alert">
+                <h4 class="alert-heading">{{ object.nama }}</h4>
+                <p>Apakah {{ object.nama }} sudah mengembalikan buku ? </p>
+                <hr>
+               <div class="col">
+                <button type="submit" class="btn btn-success">Sudah</button>
+                <a href="{% url 'perpustakaan:index' %}" class="btn btn-danger">Belum</a>
+               </div>
+              </div>
+           </div>
+       </div>
+    </form>
+</div>
+{% endblock  %}
